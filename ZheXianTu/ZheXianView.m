@@ -79,17 +79,19 @@
     CGFloat superHeight = self.frame.size.height;
     
     //左边Y
-    TDYView *tdView = [[TDYView alloc] init];
+    TDYView *tdView = [[TDYView alloc] initWithFrame:CGRectMake(0, 0, Y_PADDING_WIDTH, superHeight - 40)];
     
     //传入阴影曲线数据
     tdView.dataArray = self.dataArr;
+    
     [self addSubview:tdView];
     
     //右边Y
-    TDYView *rightView = [[TDYView alloc] init];
+    TDYView *rightView = [[TDYView alloc] initWithFrame:CGRectMake(0, 0, Y_PADDING_WIDTH, superHeight - 40)];
     
     //传入非阴影曲线数据
     rightView.dataArray = self.dataArrWithNoShadow;
+    
     [self addSubview:rightView];
     
     
@@ -116,14 +118,14 @@
     [tdView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self);
         make.top.equalTo(self);
-        make.bottom.equalTo(self);
+        make.bottom.equalTo(self).offset(-25);
         make.width.mas_equalTo(Y_PADDING_WIDTH);
     }];
     
     [rightView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self);
         make.top.equalTo(self);
-        make.bottom.equalTo(self);
+        make.bottom.equalTo(self).offset(-25);
         make.width.mas_equalTo(Y_PADDING_WIDTH);
     }];
     

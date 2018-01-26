@@ -15,9 +15,11 @@
 #define kHeight [UIScreen mainScreen].bounds.size.height
 #define kWidth [UIScreen mainScreen].bounds.size.width
 
-//分成几份
+//x轴 整个frame.size.width 分成几份
 #define each 8
 
+//y轴 分成几份
+#define eachY 5
 
 @implementation BackgroundView
 {
@@ -58,10 +60,8 @@
     self.xGap = (kWidth - Y_PADDING_WIDTH * 2) / each;
     self.yGap = 0;
 
-    self.monthDistance = 18;
-    
-    
     self.dataHeight = self.frame.size.height - 40;
+    self.monthDistance = self.dataHeight /eachY;
     
     //x轴标注
     for (int i = 0; i < self.xArr.count; i++) {
@@ -265,7 +265,7 @@
     [self.layer addSublayer:lineLay];
     
     
-//    [self setAnimationWithShapeLay:lineLay Time:4.0];
+    [self setAnimationWithShapeLay:lineLay Time:2.0];
     
 }
 

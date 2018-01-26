@@ -12,5 +12,5 @@
 
 //Y轴数据数组
 @property (nonatomic,strong) NSArray *dataArray;  //接收曲线数据(传入阴影数据显示的就是对应的y轴标注，传入非阴影数据显示的就是非阴影数据对应y轴标注)
-
+- (void)addLabel;
 @end

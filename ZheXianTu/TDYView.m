@@ -54,7 +54,7 @@
     CGFloat minValue = [[newArray valueForKeyPath:@"@min.floatValue"] floatValue];
     
     //标签间的上下间距
-    self.paddingValue = (maxValue - minValue)/4.0;
+    self.paddingValue = (maxValue - minValue)/5.0;
     
     //
     
@@ -76,6 +76,8 @@
 #pragma mark 初始化布局 添加Y轴上的标签
 - (void)addLabel {
     
+    CGFloat pad = (self.frame.size.height) / 5;
+    
     for (int i = 0; i < 5; i++) {
         UILabel *label = [[UILabel alloc] init];
         
@@ -92,7 +94,7 @@
             make.left.equalTo(self);
             make.right.equalTo(self);
             make.height.mas_equalTo(30);
-            make.bottom.equalTo(self).offset(-((i * 18)+25));
+            make.bottom.equalTo(self).offset(-(i * pad));
         }];
         
         

@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ZheXianView *zhexianView = [[ZheXianView alloc]initWithFrame:CGRectMake(0, 200, kWidth, kHeight/4 - 20)];
+    ZheXianView *zhexianView = [[ZheXianView alloc]initWithFrame:CGRectMake(0, 200, kWidth, 300)];
     zhexianView.dataArr =  @[@"0.0",
                              @"0.0",
                              @"225.0",
@@ -37,20 +37,20 @@
                              @"113.0",
                              @"113.0"];
     //无阴影曲线数据 
-    zhexianView.dataArrWithNoShadow = @[@"0.0",
-                                        @"0.0",
-                                        @"0.0",
-                                        @"0.1",
-                                        @"0.3",
-                                        @"0.7",
+    zhexianView.dataArrWithNoShadow = @[@"1.5",
+                                        @"2.1",
+                                        @"2.1",
+                                        @"5.6",
+                                        @"4.4",
+                                        @"10.8",
                                         @"1.1",
                                         @"1.5",
                                         @"1.9",
                                         @"2.1",
                                         @"2.1",
-                                        @"2.2",
-                                        @"2.2",
-                                        @"2.2",];  //无阴影曲线数据
+                                        @"5.6",
+                                        @"4.4",
+                                        @"10.8",];  //无阴影曲线数据
     
     zhexianView.monthArr = @[@6,
                              @7,
