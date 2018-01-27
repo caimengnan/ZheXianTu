@@ -209,12 +209,15 @@
     //    [self setLineShadowAnimationWithLayer:lineLay Time:4.0];
     
     //画每条横线
+    CGFloat distance = kWidth - Y_PADDING_WIDTH;
+    CGFloat pointX = self.xGap * self.xArr.count < distance ? distance : (self.xGap * self.xArr.count);
+    
     for (int i = 1; i < 5; i++) {
         //左边y轴上的点
         CGPoint point = CGPointMake(0, self.dataHeight - i * self.monthDistance);
         
         //右边y轴上的点
-        CGPoint point2 = CGPointMake(self.xGap * self.xArr.count, point.y);
+        CGPoint point2 = CGPointMake(pointX, point.y);
         
         CGContextMoveToPoint(ctx, point.x, point.y);
         CGContextAddLineToPoint(ctx, point2.x, point2.y);
@@ -265,7 +268,7 @@
     [self.layer addSublayer:lineLay];
     
     
-    [self setAnimationWithShapeLay:lineLay Time:2.0];
+//    [self setAnimationWithShapeLay:lineLay Time:2.0];
     
 }
 

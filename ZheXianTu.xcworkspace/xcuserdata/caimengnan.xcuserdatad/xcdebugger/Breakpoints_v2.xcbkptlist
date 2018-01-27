@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ZheXianTu/BackgroundView.m"
-            timestampString = "538631179.804388"
+            filePath = "ZheXianTu/ZheXianView.m"
+            timestampString = "538711541.3440419"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "-setStackZheXian"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-addSubViews"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -25,6 +25,7 @@
 {
     UIScrollView *scrollView;
     BackgroundView *backView;
+    CGFloat point_x;
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
@@ -68,8 +69,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    scrollView.contentSize = CGSizeMake((([UIScreen mainScreen].bounds.size.width-Y_PADDING_WIDTH*2)/each) * self.monthArr.count, self.frame.size.height);
-    backView.frame = CGRectMake(0, 0, (([UIScreen mainScreen].bounds.size.width-Y_PADDING_WIDTH*2)/each) * self.monthArr.count, self.frame.size.height);
+    scrollView.contentSize = CGSizeMake(point_x, self.frame.size.height);
+    backView.frame = CGRectMake(0, 0,point_x, self.frame.size.height);
     
 }
 
@@ -102,9 +103,12 @@
 
     scrollView.backgroundColor = [UIColor whiteColor];
     
-    backView = [[BackgroundView alloc] initWithFrame:CGRectMake(0, 0, (([UIScreen mainScreen].bounds.size.width-Y_PADDING_WIDTH*2)/each) * self.monthArr.count, superHeight)];
+    CGFloat distance = kWidth - Y_PADDING_WIDTH;
+    point_x = ((kWidth-Y_PADDING_WIDTH*2)/each) * self.monthArr.count < distance ? distance : (((kWidth-Y_PADDING_WIDTH*2)/each) * self.monthArr.count);
     
-    backView.backgroundColor = [UIColor whiteColor];
+    backView = [[BackgroundView alloc] initWithFrame:CGRectMake(0, 0, point_x, superHeight)];
+    
+    backView.backgroundColor = [UIColor clearColor];
     
     backView.dataArr = self.dataArr;
     backView.xArr = self.monthArr;
